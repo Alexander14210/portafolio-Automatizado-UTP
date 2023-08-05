@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import ttk
 from tkinter import messagebox
 
 #Configuración de la Ventana principal
@@ -52,9 +53,6 @@ tk.Button(ventana,image=imagen_ayuda,
 tk.Label(ventana, text='Portafolio Automatizado', font=('Arial', 16)).pack()
 #Boton para seleccionar la ruta de la carpeta donde se quiere guardar
 
-imagen_logo = tk.PhotoImage(file = r'.\Portafolio\imagenes\Logo.png')
-foto = tk.Label(ventana, image=imagen_logo).pack()
-
 
 
 
@@ -62,21 +60,18 @@ tk.Button(ventana, text='Selecciona la ruta donde quieres guardar el portafolio'
 ruta = tk.Label(ventana, text='')
 ruta.pack()
 #Input nombre de la materia
-tk.Label(text='Introduce el nombre de la materia').pack()
-tk.Entry(ventana, textvariable=nombreMateria).pack()
+tk.Label(text='Introduce el nombre de la materia', font=('Inter Bold',16)).pack(anchor=tk.E, ipadx=40)
+tk.Entry(ventana, textvariable=nombreMateria, width=50).pack(padx=50)
 
-tk.Label(text='Introduce tu nombre').pack()
-tk.Entry(ventana, textvariable=nombre).pack()
+tk.Label(text='Introduce tu nombre', font=('Inter Bold',16), justify='left').pack()
+tk.Entry(ventana, textvariable=nombre, width=50).pack()
 
-tk.Label(text='Introduce tu apellido').pack()
-tk.Entry(ventana, textvariable=apellido).pack()
+tk.Label(text='Introduce tu apellido', font=('Inter Bold',16), justify='left').pack()
+tk.Entry(ventana, textvariable=apellido, width=50).pack()
 
 
 #Boton para crear Portafolio y comprobar la informacion proporcionada
-tk.Button(text='Crear Portafolio',
-          height=2,
-          width=20,
-          command=lambda: comprobacion()).pack()
+tk.Button(text='Crear Portafolio', height=2,width=20, command=lambda: comprobacion()).pack()
 
 #Comprobacion del estado de la informacion
 def comprobacion():
